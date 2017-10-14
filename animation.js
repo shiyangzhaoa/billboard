@@ -56,6 +56,7 @@ const timer = setInterval(() => {
   const length = textArr.length;
   const showNumber = textArr.splice(Math.random() * length, 1);
   spanEles[showNumber].style.backgroundColor = '#F40';
+  imgEles[showNumber].src = imgList.splice(Math.floor(Math.random() * imgList.length), 1);
   iEles[showNumber].style.left = '100%';
   if (!textArr.length) {
     clearInterval(timer);
@@ -71,7 +72,6 @@ const showImg = () => {
     const [showNumber] = imgArr.splice(Math.random() * length, 1);
     const [imgIndex] = imgSrc.splice(Math.random() * imgSrc.length, 1);
     
-    imgEles[showNumber].src = imgList[imgIndex];
     imgEles[showNumber].style.display = 'inline';
     spanEles[showNumber].style.backgroundColor = '#fff';
     iEles[showNumber].style.left = '-100%';
